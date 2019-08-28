@@ -21,7 +21,8 @@ ggplot(spotify_df, aes(x = valence, y = album_name)) +
   xlab("Valence") +
   ylab("Nombre del álbum") +
   ggtitle("Joyplot of Taylor Swift's joy distributions", 
-          subtitle = "Based on valence pulled from Spotify's Web API with spotifyr")
+          subtitle = "Based on valence pulled from Spotify's Web API with spotifyr") +
+  ggsave('imgs/joyplot_albums.png', dpi = 550, width = 10, height = 5)
 
 spotify_df %>% 
   filter(album_name == "Lover") %>% 
@@ -30,8 +31,9 @@ spotify_df %>%
   theme_joy() +
   xlab("Valence") +
   ylab("Lover - Nombre de la canción") +
-  ggtitle("Joyplot of Taylor Swift's joy distributions", 
-          subtitle = "Based on valence pulled from Spotify's Web API with spotifyr")
+  ggtitle("Joyplot of Taylor Swift's joy distribution in Lover", 
+          subtitle = "Based on valence pulled from Spotify's Web API with spotifyr") +
+  ggsave('imgs/joyplot_lover.png', dpi = 550, width = 10, height = 5)
 
 spotify_df %>% 
   filter(album_name == "reputation") %>% 
@@ -40,8 +42,9 @@ spotify_df %>%
   theme_joy() +
   xlab("Valence") +
   ylab("Lover - Nombre de la canción") +
-  ggtitle("Joyplot of Taylor Swift's joy distributions", 
-          subtitle = "Based on valence pulled from Spotify's Web API with spotifyr")
+  ggtitle("Joyplot of Taylor Swift's joy distribution in reputation", 
+          subtitle = "Based on valence pulled from Spotify's Web API with spotifyr") +
+  ggsave('imgs/joyplot_reputation.png', dpi = 550, width = 10, height = 5) 
 
 spotify_df %>% 
   filter(album_name == "1989") %>% 
